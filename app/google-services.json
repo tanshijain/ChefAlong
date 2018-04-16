@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "704521464944",
+    "firebase_url": "https://chefalong-94e3f.firebaseio.com",
+    "project_id": "chefalong-94e3f",
+    "storage_bucket": "chefalong-94e3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704521464944:android:9ca03510c6d08fc2",
+        "android_client_info": {
+          "package_name": "com.example.tanshi.chefalong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704521464944-9ahqvkthdicsi9mrec6jr4h00hott5u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT5AbwVqMyKz_jaFhTzhBFjViknFQhR08"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
