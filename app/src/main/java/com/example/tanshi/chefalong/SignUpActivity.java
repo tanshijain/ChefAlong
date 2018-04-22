@@ -21,6 +21,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 public class SignUpActivity extends AppCompatActivity {
     Button signUp;
+    Button backButton;
     EditText newEmailField;
     EditText newPasswordField;
     EditText addressField;
@@ -43,6 +44,17 @@ public class SignUpActivity extends AppCompatActivity {
         newEmailField = findViewById(R.id.newEmail);
         newPasswordField = findViewById(R.id.newPassword);
         addressField = findViewById(R.id.address);
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("", "button clicked");
+                Intent i = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override

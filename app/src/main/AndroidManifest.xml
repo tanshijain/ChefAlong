@@ -8,6 +8,8 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -26,7 +28,6 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity" />
-        <activity android:name=".MapActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".HostActivity" />
         <activity android:name=".MessageActivity" />
@@ -45,7 +46,9 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".PinBoardActivity" />
+        <activity android:name=".ChosenPinActivity"></activity>
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
 package com.example.tanshi.chefalong;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +35,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     HashMap<String, DishInfo> events = new HashMap<>();
     TextView dishNameTextView;
+    TextView hostNameTextView;
+    TextView numGuestsTextView;
+    TextView timeTextView;
+    TextView durationTextView;
+    TextView cuisineTextView;
+
     String currentMarkerKey;
     Button joinButton;
+    Button homeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +55,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         dishNameTextView = findViewById(R.id.dish_name);
+        hostNameTextView = findViewById(R.id.host_name);
+        numGuestsTextView = findViewById(R.id.numGuests);
+        timeTextView = findViewById(R.id.time);
+        durationTextView = findViewById(R.id.duration);
+        cuisineTextView = findViewById(R.id.cusisine_name);
         joinButton = findViewById(R.id.join_button);
+        homeButton = findViewById(R.id.homeButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("", "button clicked");
+                Intent i = new Intent(MapsActivity.this, ProfileActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +90,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             .push()
                             .setValue(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 }
+                Log.d("", "button clicked");
+                Intent i = new Intent(MapsActivity.this, MessageGroupListActivity.class);
+                startActivity(i);
+                finish();
             }
         });
     }
@@ -81,11 +110,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        // Add a marker in Sunnyvale and move the camera
-        /*LatLng sunnyvale = new LatLng(37.3688, -122.0363);
-        mMap.addMarker(new MarkerOptions().position(sunnyvale).title("Marker in Sunnyvale"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sunnyvale));*/
         mMap.setOnMarkerClickListener(this);
         ref.child("events").addChildEventListener(new ChildEventListener() {
             @Override
@@ -94,6 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 double latitude = dishInfo.latitude;
                 double longitude = dishInfo.longitude;
                 LatLng latLng = new LatLng(latitude, longitude);
+                //mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 Log.d("markerlatlng", latitude+" "+longitude);
                 Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(dishInfo.dish));
                 marker.setTag(dataSnapshot.getKey());
@@ -129,7 +154,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
         DishInfo dishInfo = events.get(marker.getTag());
-        dishNameTextView.setText(dishInfo.dish);
+        dishNameTextView.setVisibility(View.VISIBLE);
+        cuisineTextView.setVisibility(View.VISIBLE);
+        hostNameTextView.setVisibility(View.VISIBLE);
+        numGuestsTextView.setVisibility(View.VISIBLE);
+        timeTextView.setVisibility(View.VISIBLE);
+        durationTextView.setVisibility(View.VISIBLE);
+        joinButton.setVisibility(View.VISIBLE);
+
+        dishNameTextView.setText("dish: " + dishInfo.dish);
+        hostNameTextView.setText("host: " + dishInfo.host);
+        numGuestsTextView.setText("number of guests: " + Integer.toString(dishInfo.numGuests));
+        timeTextView.setText("time: " + dishInfo.timeText);
+        durationTextView.setText("duration: " + Integer.toString(dishInfo.duration) + " minutes");
+        cuisineTextView.setText("cuisine: " + dishInfo.cuisine);
+
         currentMarkerKey = (String)(marker.getTag());
 
         return false;

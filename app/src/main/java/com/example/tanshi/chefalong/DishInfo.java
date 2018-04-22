@@ -11,6 +11,7 @@ import java.util.List;
 
 public class DishInfo {
 
+    public String host;
     public String dish;
     public String cuisine;
     public int numGuests;
@@ -22,7 +23,8 @@ public class DishInfo {
 
     public DishInfo(){}
 
-    public DishInfo(String dish, String cuisine, int numGuests, String timeText, int duration, HashMap<String,String>attendees, double latitude, double longitude) {
+    public DishInfo(String host, String dish, String cuisine, int numGuests, String timeText, int duration, HashMap<String,String>attendees, double latitude, double longitude) {
+        this.host = host;
         this.dish = dish;
         this.cuisine = cuisine;
         this.numGuests = numGuests;

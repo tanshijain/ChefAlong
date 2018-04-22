@@ -8,21 +8,29 @@
 
     <TextView
         android:id="@+id/description2"
-        android:layout_width="358dp"
-        android:layout_height="116dp"
+        android:layout_width="302dp"
+        android:layout_height="188dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="What We Do:"
-        app:layout_constraintTop_toBottomOf="@+id/description1"
-        tools:layout_editor_absoluteX="18dp" />
+        android:text="ChefAlong aims to bring people together to learn new culinary skills, get to know their neighbors and community members, and foster kinship through food! While the Internet provides gazillions of recipes and techniques to enhance one’s culinary expertise, we provide a human connection, a way to share knowledge through real-time interaction, sharing of life stories, exploring of cultures, all through the medium of food, glorious food. "
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
 
     <TextView
         android:id="@+id/description1"
-        android:layout_width="358dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="8dp"
-        android:text="Who We Are:"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="18dp" />
+        android:layout_width="304dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Tanshi Jain is a rising high school junior committed to using technology for social good."
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title1" />
 
     <Button
         android:id="@+id/SignUpButton"
@@ -45,5 +53,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/SignUpButton"
         app:layout_constraintTop_toBottomOf="@+id/description2" />
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="Who We Are: "
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:text="What We Do: "
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description1" />
 
 </android.support.constraint.ConstraintLayout>

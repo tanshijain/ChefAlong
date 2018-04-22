@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignInActivity extends AppCompatActivity {
     Button signIn;
+    Button backButton;
     EditText emailText;
     EditText passwordText;
     @Override
@@ -28,6 +29,8 @@ public class SignInActivity extends AppCompatActivity {
         signIn = findViewById(R.id.signInButton);
         emailText = findViewById(R.id.emailField);
         passwordText = findViewById(R.id.passwordField);
+        backButton = findViewById(R.id.backButton);
+
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +70,7 @@ public class SignInActivity extends AppCompatActivity {
 
         });
 
-        /*signIn.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("", "button clicked");
@@ -75,6 +78,7 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        });*/
+        });
+
     }
 }

@@ -1,9 +1,11 @@
 package com.example.tanshi.chefalong;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -26,19 +28,35 @@ public class MessageActivity extends AppCompatActivity {
     FirebaseDatabase db;
     String topic;
     MessageAdapter messageAdapter;
+    Button backButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+        backButton = findViewById(R.id.backButton);
         topic = getIntent().getExtras().getString("topic");
         send = findViewById(R.id.sendButton);
         messageField = findViewById(R.id.MessageText);
-        textView = findViewById(R.id.textView);
+        //textView = findViewById(R.id.textView);
         ListView messageView = findViewById(R.id.messageListView);
         ArrayList <MessageData> messages = new ArrayList<>();
         messageAdapter = new MessageAdapter(MessageActivity.this, messages);
+
         messageView.setAdapter(messageAdapter);
+
+        messageView.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("", "button clicked");
+                Intent i = new Intent(MessageActivity.this, MessageGroupListActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         db = FirebaseDatabase.getInstance();
         send.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +79,9 @@ public class MessageActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Map<String, String> data = (Map) dataSnapshot.getValue();
                 //create a message
-                textView.append(data.get("user") + ": " + data.get("message text") +"\n");
+
+                //textView.append(data.get("user") + ": " + data.get("message text") +"\n");
+                messageAdapter.add(new MessageData(data.get("message text"), data.get("user")));
                 Log.d("message", data.get("message text"));
             }
 

@@ -63,7 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("", "button clicked");
-                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
+                Intent i = new Intent(ProfileActivity.this, PinBoardActivity.class);
                 startActivity(i);
                 finish();
             }
