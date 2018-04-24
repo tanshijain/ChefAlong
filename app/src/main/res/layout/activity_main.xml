@@ -4,40 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink"
     tools:context="com.example.tanshi.chefalong.MainActivity">
 
     <TextView
         android:id="@+id/description2"
-        android:layout_width="302dp"
-        android:layout_height="188dp"
+        android:layout_width="304dp"
+        android:layout_height="135dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="ChefAlong aims to bring people together to learn new culinary skills, get to know their neighbors and community members, and foster kinship through food! While the Internet provides gazillions of recipes and techniques to enhance one’s culinary expertise, we provide a human connection, a way to share knowledge through real-time interaction, sharing of life stories, exploring of cultures, all through the medium of food, glorious food. "
+        android:layout_marginTop="30dp"
         android:gravity="center"
+        android:text="ChefAlong aims to bring people together to learn new culinary skills, get to know their neighbors and community members, and foster kinship through food! We hope to encourage social engagement within neighborhoods with the intent of building stronger, safer, happier, and more tolerant communities."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title2" />
 
-    <TextView
-        android:id="@+id/description1"
-        android:layout_width="304dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Tanshi Jain is a rising high school junior committed to using technology for social good."
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title1" />
 
     <Button
         android:id="@+id/SignUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/seagreen"
         android:text="Sign Up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description2" />
@@ -47,26 +37,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/seagreen"
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SignUpButton"
         app:layout_constraintTop_toBottomOf="@+id/description2" />
 
-    <TextView
-        android:id="@+id/title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:text="Who We Are: "
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title2"
@@ -74,12 +50,24 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:text="What We Do: "
+        android:layout_marginTop="170dp"
         android:gravity="center"
+        android:text="What We Do: "
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description1" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="277dp"
+        android:layout_height="139dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/squarelogo" />
 
 </android.support.constraint.ConstraintLayout>

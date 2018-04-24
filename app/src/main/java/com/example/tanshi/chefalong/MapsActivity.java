@@ -80,9 +80,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     return;
                 DishInfo dishInfo = events.get(currentMarkerKey);
                 if (dishInfo.attendees != null && dishInfo.numGuests == dishInfo.attendees.values().size()) {
-                    Toast.makeText(MapsActivity.this, "This event is full.", Toast.LENGTH_SHORT);
-                } else if(dishInfo.attendees.values().contains(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
-                    Toast.makeText(MapsActivity.this, "You already joined this event.", Toast.LENGTH_SHORT);
+                    Toast.makeText(MapsActivity.this, "This event is full.", Toast.LENGTH_SHORT).show();
+                } else if(dishInfo.attendees != null && dishInfo.attendees.values().contains(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                    Toast.makeText(MapsActivity.this, "You already joined this event.", Toast.LENGTH_SHORT).show();
                 } else {
                     ref.child("events")
                             .child(currentMarkerKey)

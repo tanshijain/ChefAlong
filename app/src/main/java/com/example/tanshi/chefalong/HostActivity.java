@@ -46,12 +46,16 @@ public class HostActivity extends AppCompatActivity {
     }
 
     public LatLng getLocationFromAdress(String strAddress) {
+        Log.d("", "trying to geocode");
+
         Toast.makeText(this, "trying to find "+strAddress, Toast.LENGTH_SHORT).show();
         Geocoder coder = new Geocoder(this);
         List<Address> addressList;
         LatLng p1 = null;
 
-        try {
+       try {
+            Log.d("", "second try to geocode");
+
             addressList = coder.getFromLocationName(strAddress, 1);
             if (addressList == null) {
                 return null;
@@ -60,8 +64,11 @@ public class HostActivity extends AppCompatActivity {
             location.getLatitude();
             location.getLongitude();
 
+
             p1 = new LatLng(location.getLatitude(), location.getLongitude());
-        } catch (IOException e) {
+            Log.d("", "latlng "+p1);
+
+       } catch (IOException e) {
             e.printStackTrace();
             Log.d("", "Failed to geocode");
         }

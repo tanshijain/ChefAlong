@@ -4,8 +4,19 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="gray">#d4d4d4</color>
-    <color name="blue">#4580f9</color>
+    <color name="blue">#96b9ff</color>
     <color name="white">#ffffff</color>
+    <color name="pink">#fff2fa</color>
+    <color name="black">#000000</color>
+    <color name="seagreen">#86d7b4</color>
+    <color name="seagreenlight">#85ded5</color>
+    <color name="yellow">#ffe667</color>
+    <color name="darkblue">#4d94c7</color>
+
+
+
+
+
 
 
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink"
     tools:context="com.example.tanshi.chefalong.HostActivity">
 
     <EditText
@@ -42,7 +43,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="What time?"
+        android:hint="At what time?"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:text="Add"
+        android:background="@color/seagreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/durationField" />
@@ -82,7 +84,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Amount of time (minutes)?"
+        android:hint="Duration (minutes)?"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +98,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:text="Home"
+        android:background="@color/seagreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton" />

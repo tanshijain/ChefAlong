@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink"
     tools:context="com.example.tanshi.chefalong.ChosenPinActivity">
 
     <Button
@@ -14,6 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:text="Back"
+        android:background="@color/seagreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipe" />

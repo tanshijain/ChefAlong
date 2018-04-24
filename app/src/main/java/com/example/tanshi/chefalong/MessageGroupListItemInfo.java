@@ -7,10 +7,9 @@ package com.example.tanshi.chefalong;
 public class MessageGroupListItemInfo {
         public String topic;
         public String description;
-        public String key;
-        public MessageGroupListItemInfo(String t, String d, String k) {
+
+        public MessageGroupListItemInfo(String t, String d) {
             topic = t;
             description = d;
-            key = k;
         }
 }

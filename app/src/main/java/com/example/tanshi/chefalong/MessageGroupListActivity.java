@@ -41,11 +41,11 @@ public class MessageGroupListActivity extends AppCompatActivity {
             }
         });
 
-        FirebaseDatabase.getInstance().getReference("events").addChildEventListener(new ChildEventListener() {
+        FirebaseDatabase.getInstance().getReference("topicList").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                DishInfo data = (DishInfo) dataSnapshot.getValue();
-                adapter.add(new MessageGroupListItemInfo(data.dish, data.cuisine, dataSnapshot.getKey()));
+                Map<String, String> data = (Map) dataSnapshot.getValue();
+                adapter.add(new MessageGroupListItemInfo(data.get("topic"), data.get("description")));
             }
 
             @Override
